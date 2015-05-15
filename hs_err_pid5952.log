@@ -1,0 +1,279 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe2961eca6, pid=5952, tid=5964
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_45-b15) (build 1.8.0_45-b15)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.45-b02 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [libpxcclr.jni.dll+0xeca6]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002200800):  JavaThread "main" [_thread_in_native, id=5964, stack(0x0000000002080000,0x0000000002180000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000000
+
+Registers:
+RAX=0x0000000000000000, RBX=0x0000000016912d90, RCX=0x0000000000000000, RDX=0x0000000000000000
+RSP=0x000000000217f460, RBP=0x000000000217f540, RSI=0x00000000022009f8, RDI=0x0000000000000000
+R8 =0x0000000000000000, R9 =0x0000000000837e30, R10=0x0000000000859ec0, R11=0x0000000000859ec8
+R12=0x0000000000000000, R13=0x0000000016912d90, R14=0x000000000217f558, R15=0x0000000002200800
+RIP=0x00007ffe2961eca6, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x000000000217f460)
+0x000000000217f460:   0000000100000d48 00007ffe2961ee22
+0x000000000217f470:   0000000002200800 0000000002200800
+0x000000000217f480:   00000000d5c5edd8 000000006af93b61
+0x000000000217f490:   0000000002307a70 0000000002315e34
+0x000000000217f4a0:   0000000002200800 000000000217f520
+0x000000000217f4b0:   0000000000000008 0000000040000021
+0x000000000217f4c0:   000000000217f540 0000000002200800
+0x000000000217f4d0:   0000000100000d48 0000000000000000
+0x000000000217f4e0:   000000000217f4e0 0000000000000000
+0x000000000217f4f0:   000000000217f558 0000000016934a08
+0x000000000217f500:   0000000000000000 0000000016912d90
+0x000000000217f510:   0000000000000000 000000000217f540
+0x000000000217f520:   000000000217f5a0 0000000002307ced
+0x000000000217f530:   00000000d5bbd000 000000000230f978
+0x000000000217f540:   00000000d5c5edd8 0000000044334146
+0x000000000217f550:   0000000000859b10 00000000d5c5edd8 
+
+Instructions: (pc=0x00007ffe2961eca6)
+0x00007ffe2961ec86:   89 74 24 20 57 48 83 ec 30 49 8b 00 48 8b f1 41
+0x00007ffe2961ec96:   8b d1 49 8b c8 ff 50 20 48 8b 6c 24 60 48 8b f8
+0x00007ffe2961eca6:   48 8b 00 48 85 c0 74 28 4c 8b 16 48 89 44 24 50
+0x00007ffe2961ecb6:   48 8d 44 24 50 41 b9 01 00 00 00 45 33 c0 48 8b 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX={method} {0x0000000016912d98} 'PXCMSenseManager_QuerySample' '(JI[J)V' in 'intel/rssdk/PXCMSenseManager'
+RCX=0x0000000000000000 is an unknown value
+RDX=0x0000000000000000 is an unknown value
+RSP=0x000000000217f460 is pointing into the stack for thread: 0x0000000002200800
+RBP=0x000000000217f540 is pointing into the stack for thread: 0x0000000002200800
+RSI=0x00000000022009f8 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x0000000000000000 is an unknown value
+R9 =0x0000000000837e30 is an unknown value
+R10=0x0000000000859ec0 is an unknown value
+R11=0x0000000000859ec8 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13={method} {0x0000000016912d98} 'PXCMSenseManager_QuerySample' '(JI[J)V' in 'intel/rssdk/PXCMSenseManager'
+R14=0x000000000217f558 is pointing into the stack for thread: 0x0000000002200800
+R15=0x0000000002200800 is a thread
+
+
+Stack: [0x0000000002080000,0x0000000002180000],  sp=0x000000000217f460,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libpxcclr.jni.dll+0xeca6]
+C  0x0000000002315e34
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  intel.rssdk.PXCMSenseManager.PXCMSenseManager_QuerySample(JI[J)V+0
+j  intel.rssdk.PXCMSenseManager.QuerySample(I)Lintel/rssdk/PXCMCapture$Sample;+11
+j  intel.rssdk.PXCMSenseManager.QueryFaceSample()Lintel/rssdk/PXCMCapture$Sample;+3
+j  FaceTracking.main([Ljava/lang/String;)V+250
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000018764800 JavaThread "Service Thread" daemon [_thread_blocked, id=6016, stack(0x0000000018b40000,0x0000000018c40000)]
+  0x0000000016eb2800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=6012, stack(0x0000000018640000,0x0000000018740000)]
+  0x0000000016eaf000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=6008, stack(0x0000000018540000,0x0000000018640000)]
+  0x0000000016eac800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=6004, stack(0x0000000018440000,0x0000000018540000)]
+  0x0000000016eab000 JavaThread "Attach Listener" daemon [_thread_blocked, id=6000, stack(0x0000000018340000,0x0000000018440000)]
+  0x0000000016eaa000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5996, stack(0x0000000018240000,0x0000000018340000)]
+  0x00000000022f5800 JavaThread "Finalizer" daemon [_thread_blocked, id=5992, stack(0x0000000018140000,0x0000000018240000)]
+  0x0000000016e79000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5988, stack(0x0000000018040000,0x0000000018140000)]
+=>0x0000000002200800 JavaThread "main" [_thread_in_native, id=5964, stack(0x0000000002080000,0x0000000002180000)]
+
+Other Threads:
+  0x0000000016e77000 VMThread [stack: 0x0000000017f40000,0x0000000018040000] [id=5984]
+  0x0000000018765800 WatcherThread [stack: 0x0000000018c40000,0x0000000018d40000] [id=6020]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 38400K, used 3344K [0x00000000d5980000, 0x00000000d8400000, 0x0000000100000000)
+  eden space 33280K, 10% used [0x00000000d5980000,0x00000000d5cc4260,0x00000000d7a00000)
+  from space 5120K, 0% used [0x00000000d7f00000,0x00000000d7f00000,0x00000000d8400000)
+  to   space 5120K, 0% used [0x00000000d7a00000,0x00000000d7a00000,0x00000000d7f00000)
+ ParOldGen       total 87552K, used 0K [0x0000000080c00000, 0x0000000086180000, 0x00000000d5980000)
+  object space 87552K, 0% used [0x0000000080c00000,0x0000000080c00000,0x0000000086180000)
+ Metaspace       used 3804K, capacity 4768K, committed 4864K, reserved 1056768K
+  class space    used 440K, capacity 464K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x00000000116c0000,0x0000000011ac0000] byte_map_base: 0x00000000112ba000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006b6a4040
+ Begin Bits: [0x0000000012170000, 0x0000000014140000)
+ End Bits:   [0x0000000014140000, 0x0000000016110000)
+
+Polling page: 0x0000000000ad0000
+
+CodeCache: size=245760Kb used=1299Kb max_used=1311Kb free=244460Kb
+ bounds [0x0000000002300000, 0x0000000002570000, 0x0000000011300000]
+ total_blobs=366 nmethods=110 adapters=169
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 10.251 Thread 0x0000000016eb2800  106       3       java.util.HashMap::getNode (148 bytes)
+Event: 10.251 Thread 0x0000000016eb2800 nmethod 106 0x0000000002442e90 code [0x0000000002443060, 0x0000000002443a08]
+Event: 10.251 Thread 0x0000000016eb2800  107       3       java.nio.Buffer::checkIndex (22 bytes)
+Event: 10.251 Thread 0x0000000016eb2800 nmethod 107 0x0000000002442a10 code [0x0000000002442b80, 0x0000000002442dc8]
+Event: 10.251 Thread 0x0000000016eb2800  108       3       java.nio.DirectLongBufferU::ix (10 bytes)
+Event: 10.251 Thread 0x0000000016eb2800 nmethod 108 0x00000000024424d0 code [0x0000000002442620, 0x0000000002442790]
+Event: 13.954 Thread 0x0000000016eb2800  109       3       sun.nio.cs.SingleByte$Encoder::encode (32 bytes)
+Event: 13.954 Thread 0x0000000016eaf000  110       4       java.lang.String::indexOf (70 bytes)
+Event: 13.954 Thread 0x0000000016eb2800 nmethod 109 0x0000000002442010 code [0x0000000002442180, 0x0000000002442390]
+Event: 13.956 Thread 0x0000000016eaf000 nmethod 110 0x0000000002447d50 code [0x0000000002447ea0, 0x0000000002448058]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (6 events):
+Event: 0.022 Thread 0x0000000002200800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000d598ceb8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3627\hotspot\srI­ãþ‰–?
+Event: 0.022 Thread 0x0000000002200800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000d598d148) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jºQÐS_á±?
+Event: 0.070 Thread 0x0000000002200800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d5b8dce8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.070 Thread 0x0000000002200800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d5b8e030) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.070 Thread 0x0000000002200800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d5b91f58) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+Event: 0.070 Thread 0x0000000002200800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d5b922a0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u45\3627\hotspot\src\share\vm\prims\jvm.cpp, line 1382]
+
+Events (10 events):
+Event: 9.026 loading class java/util/regex/Pattern$Dollar
+Event: 9.026 loading class java/util/regex/Pattern$Dollar done
+Event: 10.250 loading class intel/rssdk/PXCMCapture$Sample
+Event: 10.250 loading class intel/rssdk/PXCMCapture$Sample done
+Event: 10.251 loading class intel/rssdk/PXCMImageShared$ImageDataShared
+Event: 10.251 loading class intel/rssdk/PXCMImageShared$ImageDataShared done
+Event: 10.251 loading class intel/rssdk/PXCMImage$ImageData
+Event: 10.251 loading class intel/rssdk/PXCMImage$ImageData done
+Event: 10.251 loading class intel/rssdk/PXCMFaceData
+Event: 10.251 loading class intel/rssdk/PXCMFaceData done
+
+
+Dynamic libraries:
+0x00007ff708630000 - 0x00007ff708667000 	C:\Program Files\Java\jdk1.8.0_45\bin\java.exe
+0x00007ffe37120000 - 0x00007ffe372cc000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe36fe0000 - 0x00007ffe3711e000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ffe34340000 - 0x00007ffe34455000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ffe32df0000 - 0x00007ffe32e7e000 	C:\WINDOWS\system32\apphelp.dll
+0x00007ffe29660000 - 0x00007ffe296b3000 	C:\WINDOWS\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ffe36f30000 - 0x00007ffe36fda000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ffe34040000 - 0x00007ffe3406e000 	C:\WINDOWS\SYSTEM32\SspiCli.dll
+0x00007ffe35580000 - 0x00007ffe355d4000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x00007ffe34b80000 - 0x00007ffe34cf7000 	C:\WINDOWS\system32\USER32.dll
+0x00007ffe36ce0000 - 0x00007ffe36e74000 	C:\WINDOWS\system32\ole32.dll
+0x00007ffe355e0000 - 0x00007ffe36af8000 	C:\WINDOWS\system32\SHELL32.dll
+0x00007ffe33810000 - 0x00007ffe33831000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ffe36e80000 - 0x00007ffe36f2a000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ffe26ee0000 - 0x00007ffe26efe000 	C:\WINDOWS\SYSTEM32\MPR.dll
+0x00007ffe348c0000 - 0x00007ffe34a01000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ffe36b00000 - 0x00007ffe36b59000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x00007ffe351b0000 - 0x00007ffe353c1000 	C:\WINDOWS\SYSTEM32\combase.dll
+0x00007ffe34a20000 - 0x00007ffe34b71000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ffe34270000 - 0x00007ffe34285000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ffe32a80000 - 0x00007ffe32b32000 	C:\WINDOWS\SYSTEM32\SHCORE.dll
+0x00007ffe34d80000 - 0x00007ffe34db6000 	C:\WINDOWS\system32\IMM32.DLL
+0x00007ffe36b80000 - 0x00007ffe36cd2000 	C:\WINDOWS\system32\MSCTF.dll
+0x00007ffe325c0000 - 0x00007ffe3283b000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17784_none_624760d1ecb7236e\COMCTL32.dll
+0x000000006b730000 - 0x000000006b802000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\msvcr100.dll
+0x000000006aea0000 - 0x000000006b723000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\server\jvm.dll
+0x00007ffe29820000 - 0x00007ffe29829000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffe31e00000 - 0x00007ffe31e22000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe32870000 - 0x00007ffe3287a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffe34dd0000 - 0x00007ffe34dd7000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ffe34de0000 - 0x00007ffe34e3a000 	C:\WINDOWS\system32\WS2_32.dll
+0x00007ffe31d50000 - 0x00007ffe31d7a000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffe34dc0000 - 0x00007ffe34dc9000 	C:\WINDOWS\system32\NSI.dll
+0x00007ffe34460000 - 0x00007ffe344af000 	C:\WINDOWS\SYSTEM32\cfgmgr32.dll
+0x00007ffe33090000 - 0x00007ffe330b8000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x000000006ae90000 - 0x000000006ae9f000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\verify.dll
+0x000000006ae60000 - 0x000000006ae89000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\java.dll
+0x000000006ae40000 - 0x000000006ae56000 	C:\Program Files\Java\jdk1.8.0_45\jre\bin\zip.dll
+0x00007ffe29610000 - 0x00007ffe2965d000 	C:\Users\Zscholl\Downloads\Documents\RSSDK\Samples\Java\DF_FaceTracking\libpxcclr.jni.dll
+0x00007ffe29580000 - 0x00007ffe29604000 	C:\Program Files\Common Files\Intel\RSSDK\v4\bin\x64\libpxcsession.dll
+0x00007ffe29520000 - 0x00007ffe29572000 	C:\Program Files\Common Files\Intel\RSSDK\v4\bin\x64\tbb.dll
+0x00007ffe29470000 - 0x00007ffe29517000 	C:\WINDOWS\SYSTEM32\MSVCP110.dll
+0x00007ffe29390000 - 0x00007ffe29464000 	C:\WINDOWS\SYSTEM32\MSVCR110.dll
+0x00007ffe291e0000 - 0x00007ffe29390000 	C:\Program Files\Common Files\Intel\RSSDK\v4\bin\x64\libpxccore.dll
+0x00007ffe290b0000 - 0x00007ffe291db000 	C:\Program Files (x86)\Common Files\Intel\Intel Software Manager\intel64\intelremotemon.dll
+0x00007ffe29070000 - 0x00007ffe290b0000 	D:\Programming\Intel\RSSDK\bin\x64\libpxcphonehome.dll
+0x00007ffe28f90000 - 0x00007ffe2906b000 	C:\Program Files\Common Files\Intel\RSSDK\v4\bin\x64\libpxcpipelineutils.dll
+0x00007ffe18100000 - 0x00007ffe1a47b000 	C:\Program Files\Common Files\Intel\RSSDK\v4\bin\x64\face3d_idc\libpxcface_idc.dll
+0x0000000180000000 - 0x000000018014c000 	C:\Program Files\Common Files\Intel\RSSDK\v4\bin\x64\face3d_idc\libiomp5md.dll
+0x00007ffe29800000 - 0x00007ffe29813000 	C:\Program Files\Common Files\Intel\RSSDK\v4\bin\x64\libpxcpowermanager.dll
+0x00007ffe28e70000 - 0x00007ffe28f82000 	C:\Program Files\Common Files\Intel\RSDCM\bin\x64\IVCAM_DLL.dll
+0x00007ffe34fd0000 - 0x00007ffe351aa000 	C:\WINDOWS\system32\SETUPAPI.dll
+0x00007ffe28dd0000 - 0x00007ffe28e6d000 	C:\WINDOWS\SYSTEM32\MF.dll
+0x00007ffe28ce0000 - 0x00007ffe28dcb000 	C:\WINDOWS\SYSTEM32\MFPlat.DLL
+0x00007ffe28c70000 - 0x00007ffe28cd5000 	C:\WINDOWS\SYSTEM32\MFReadWrite.dll
+0x00007ffe29db0000 - 0x00007ffe29e06000 	C:\WINDOWS\SYSTEM32\newdev.dll
+0x00007ffe297f0000 - 0x00007ffe297fb000 	C:\WINDOWS\SYSTEM32\WINUSB.DLL
+0x00007ffe34f00000 - 0x00007ffe34fc1000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x00007ffe32f30000 - 0x00007ffe33059000 	C:\WINDOWS\SYSTEM32\UxTheme.dll
+0x00007ffe28a30000 - 0x00007ffe28c69000 	C:\WINDOWS\SYSTEM32\MFCORE.DLL
+0x00007ffe2cd00000 - 0x00007ffe2cd16000 	C:\WINDOWS\SYSTEM32\devrtl.DLL
+0x00007ffe2ff70000 - 0x00007ffe2ff78000 	C:\WINDOWS\SYSTEM32\ksuser.dll
+0x00007ffe33060000 - 0x00007ffe3306b000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffe28a00000 - 0x00007ffe28a27000 	C:\WINDOWS\SYSTEM32\RTWorkQ.DLL
+0x00007ffe317d0000 - 0x00007ffe317dc000 	C:\WINDOWS\SYSTEM32\AVRT.dll
+0x00007ffe1df30000 - 0x00007ffe1e392000 	C:\Program Files\Common Files\Intel\RSDCM\bin\x64\libpxccamera_dcm_f200.dll
+0x00007ffe31850000 - 0x00007ffe318d2000 	C:\WINDOWS\SYSTEM32\WINSPOOL.DRV
+0x00007ffe31df0000 - 0x00007ffe31df7000 	C:\WINDOWS\SYSTEM32\MSIMG32.dll
+0x00007ffe317e0000 - 0x00007ffe3184a000 	C:\WINDOWS\SYSTEM32\OLEACC.dll
+0x00007ffe31b40000 - 0x00007ffe31cf0000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.9600.17415_none_932b3b5547500489\gdiplus.dll
+0x00007ffe340e0000 - 0x00007ffe340eb000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007ffe34070000 - 0x00007ffe340d3000 	C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll
+0x00007ffe347a0000 - 0x00007ffe34856000 	C:\WINDOWS\SYSTEM32\clbcatq.dll
+0x00007ffe33ae0000 - 0x00007ffe33b00000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007ffe33700000 - 0x00007ffe33736000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007ffe33d30000 - 0x00007ffe33d56000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x00007ffe289e0000 - 0x00007ffe289fa000 	C:\Program Files\Common Files\Intel\RSDCM\bin\x64\RealSenseDCMPS.dll
+0x00007ffe2ec10000 - 0x00007ffe2ed99000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path=. 
+java_command: FaceTracking
+java_class_path (initial): .\libpxcclr.java.jar;.
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_45
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\ProgramFiles\Java\jdk1.8.0_45\bin
+USERNAME=Zscholl
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 (6.3.9600.17415)
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 8337008k(6378472k free), swap 9647728k(7508032k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.45-b02) for windows-amd64 JRE (1.8.0_45-b15), built on Apr 30 2015 12:40:44 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed May 13 17:43:10 2015
+elapsed time: 24 seconds (0d 0h 0m 24s)
+
